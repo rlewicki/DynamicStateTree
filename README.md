@@ -2,7 +2,7 @@
 
 Dynamic State Tree is a simple plugin that contians implementation of a K2_Node that allows user to create a state tree reference structure and set all its exposed parameters in runtime.
 
-By default you can create state tree reference as a property and set it's parameters. But you can only set them to a constant value. See below screenshot.
+By default you can create state tree reference as a property and set it's parameters. But you can only set them to a constant value. See screenshot below.
 
 ![Default State Tree Reference](/Screenshots/default-state-tree-ref.png?raw=true "Optional Title")
 
