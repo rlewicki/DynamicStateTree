@@ -29,9 +29,7 @@ void UK2Node_CreateDynamicStateTree::AllocateDefaultPins()
 	StateTreePin->bNotConnectable = true;
 	if (StateTree)
 	{
-		FInstancedPropertyBag Parameters;
-		Parameters.MigrateToNewBagInstance(StateTree->GetDefaultParameters());
-		if (const UPropertyBag* ParametersBag = Parameters.GetPropertyBagStruct())
+		if (const UPropertyBag* ParametersBag = StateTree->GetDefaultParameters().GetPropertyBagStruct())
 		{
 			const UEdGraphSchema_K2* K2Schema = GetDefault<UEdGraphSchema_K2>();
 			for (const FPropertyBagPropertyDesc& PropertyDesc : ParametersBag->GetPropertyDescs())
