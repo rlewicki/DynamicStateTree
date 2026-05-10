@@ -256,3 +256,10 @@ void UK2Node_CreateDynamicStateTree::ExpandNode(FKismetCompilerContext& Compiler
 	
 	BreakAllNodeLinks();
 }
+
+void UK2Node_CreateDynamicStateTree::PreloadRequiredAssets()
+{
+	Super::PreloadRequiredAssets();
+	
+	PreloadObject(StateTree);
+}
