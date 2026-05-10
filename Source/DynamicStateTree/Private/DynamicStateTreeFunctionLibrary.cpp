@@ -120,12 +120,12 @@ void UDynamicStateTreeFunctionLibrary::SetTextValue(FInstancedPropertyBagWrapper
 	PropertyBagWrapper.PropertyBag.SetValueText(PropertyName, Value);
 }
 
-void UDynamicStateTreeFunctionLibrary::SetObjectValue(FInstancedPropertyBagWrapper& PropertyBagWrapper, FName PropertyName, UObject* Value)
+void UDynamicStateTreeFunctionLibrary::SetObjectValue(FInstancedPropertyBagWrapper& PropertyBagWrapper, FName PropertyName, UObject* Value, UClass* ObjectClass)
 {
 	TValueOrError<UObject*, EPropertyBagResult> Result = PropertyBagWrapper.PropertyBag.GetValueObject(PropertyName);
 	if (Result.HasError())
 	{
-		PropertyBagWrapper.PropertyBag.AddProperty(PropertyName, EPropertyBagPropertyType::Object, Value->StaticClass());
+		PropertyBagWrapper.PropertyBag.AddProperty(PropertyName, EPropertyBagPropertyType::Object, ObjectClass);
 	}
 	PropertyBagWrapper.PropertyBag.SetValueObject(PropertyName, Value);
 }

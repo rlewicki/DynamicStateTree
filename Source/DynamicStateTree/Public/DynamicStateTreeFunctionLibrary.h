@@ -36,7 +36,7 @@ public:
 	static void SetTextValue(UPARAM(Ref) FInstancedPropertyBagWrapper& PropertyBagWrapper, FName PropertyName, FText Value);
 
 	UFUNCTION(BlueprintCallable, BlueprintInternalUseOnly)
-	static void SetObjectValue(UPARAM(Ref) FInstancedPropertyBagWrapper& PropertyBagWrapper, FName PropertyName, UObject* Value);
+	static void SetObjectValue(UPARAM(Ref) FInstancedPropertyBagWrapper& PropertyBagWrapper, FName PropertyName, UObject* Value, UClass* ObjectClass);
 
 	UFUNCTION(BlueprintCallable, BlueprintInternalUseOnly)
 	static void SetClassValue(UPARAM(Ref) FInstancedPropertyBagWrapper& PropertyBagWrapper, FName PropertyName, TSubclassOf<UObject> Value);

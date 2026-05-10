@@ -175,6 +175,11 @@ void UK2Node_CreateDynamicStateTree::ExpandNode(FKismetCompilerContext& Compiler
 			ValuePin->PinType.bIsReference = true;
 			ValuePin->DefaultValue = Pin->DefaultValue;
 		}
+		else if (PinCategory == UEdGraphSchema_K2::PC_Object)
+		{
+			UEdGraphPin* ObjectClassPin = SetterFunction->FindPinChecked(TEXT("ObjectClass"));
+			ObjectClassPin->DefaultObject = Pin->DefaultObject;
+		}
 
 		const FPinConnectionResponse Response = CompilerContext.CopyPinLinksToIntermediate(*Pin, *ValuePin);
 		if (Response.IsFatal())
